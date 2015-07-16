@@ -1,8 +1,7 @@
 def LetterCountI(str)
   greatest_repeated = str.
                         split(' ').
-                        sort_by { |word| repeat_count(word) }.
-                        last
+                        max_by { |word| repeat_count(word) }
   repeat_count(greatest_repeated) == 1 ? -1 : greatest_repeated
 end
 
